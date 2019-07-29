@@ -1,3 +1,3 @@
 <?php
 
-echo "hello yonesyo puripuri";
+echo "hello yonesyo dddd";
