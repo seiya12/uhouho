@@ -1,2 +1,4 @@
 <?php
-echo "pelopelo";
+
+
+echo "ここからアプリケーションを作りましょう";
