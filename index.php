@@ -1,2 +1,4 @@
 <?php
-echo "hello seiyaaaaaaaaaaaaaaaaa";
+function hoge(){
+    echo "hoge";
+}
