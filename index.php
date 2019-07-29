@@ -1,3 +1,2 @@
 <?php
-
-echo "hello uhouho-test";
+echo "hello uhouho -seima";
