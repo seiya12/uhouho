@@ -1,2 +1,5 @@
 <?php
-echo "hello uhouho -seima";
+
+function hoge(){
+    echo "hoge";
+}
