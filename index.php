@@ -1,3 +1,3 @@
 <?php
 
-echo "hello seima";
+echo "hello uhouho-test";
