@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>suggesh|HAL大阪|HTC|ハッカソン|teamUhouho</title>
+    <meta name="description"
+        content="「仕事帰りや学校帰りに何か美味しいものを食べたい。だけど何を食べたいかは決まっていなくて、決めるのもめんどくさい。わかるのは人数くらい。」そんな時に「suggesh」はあなたの気分に合わせて料理を提案します。">
+    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+      <div id="header">
+        <h1>Suggesh</h1>
+        <p class="icon"><img src="./images/icon2.jpg"></p>
+        <h2>SUGGEST<br>DISH</h2>
+        <p class="text"><span>あなたの気分</span>に合わせて<br>料理をご提案</p>
+      </div>
+        <transition name="fade">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false" data-interval="5000" v-if="!show">
+            <div class="carousel-inner carousel-inner--expend">
+              <div class="carousel-item active">
+                <div class="box box1"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="box box2"></div>
+              </div>
+              <div class="carousel-item" >
+                <div class="box box3"></div>
+              </div>
+              <div class="carousel-item" >
+                <div class="box box4"></div>
+              </div>
+            </div>
+          </div>
+        </transition>
+
+        <transition name="fade">
+            <div id="inquiry" v-if="show">
+                <div class="container" style="margin-left: 30rem">
+                    <el-steps :active="active" finish-status="success" style="margin: 2rem;">
+                        <el-step title="気分"></el-step>
+                        <el-step title="天気"></el-step>
+                        <el-step title="人数"></el-step>
+                        <el-step title="服の色"></el-step>
+                        <el-step title="朝食食べたもの"></el-step>
+                    </el-steps>
+                    <el-form ref="form" :model="sizeForm" label-width="120px" size="mini" action="#" method="post">
+                        <transition name="fade">
+                            <div v-if="active === 0">
+                                <el-form-item label="気分">
+                                    <el-radio-group v-model="sizeForm.happy" size="medium">
+                                        <el-radio border label="楽しい"></el-radio>
+                                        <el-radio border label="悲しい"></el-radio>
+                                        <el-radio border label="イライラ"></el-radio>
+                                        <el-radio border label="疲れた"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                            </div>
+                        </transition>
+                        <transition name="fade">
+                            <div v-if="active === 1">
+                                <el-form-item label="天気">
+                                    <el-radio-group v-model="sizeForm.weather" size="medium">
+                                        <el-radio border label="晴"></el-radio>
+                                        <el-radio border label="雲り"></el-radio>
+                                        <el-radio border label="雨"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                            </div>
+                        </transition>
+                        <transition name="fade">
+                            <div v-if="active === 2">
+                                <el-form-item label="人数">
+                                    <el-radio-group v-model="sizeForm.people" size="medium">
+                                        <el-radio border label="1人"></el-radio>
+                                        <el-radio border label="2人〜3人"></el-radio>
+                                        <el-radio border label="4人〜6人"></el-radio>
+                                        <el-radio border label="それ以上"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                            </div>
+                        </transition>
+                        <transition name="fade">
+                            <div v-if="active === 3">
+                                <el-form-item label="服の色">
+                                    <el-radio-group v-model="sizeForm.clothes" size="medium">
+                                        <el-radio border label="黒"></el-radio>
+                                        <el-radio border label="黄"></el-radio>
+                                        <el-radio border label="赤"></el-radio>
+                                        <el-radio border label="青"></el-radio>
+                                        <el-radio border label="白"></el-radio>
+                                        <el-radio border label="その他"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                            </div>
+                        </transition>
+                        <transition name="fade">
+                            <div v-if="active === 4">
+                                <el-form-item label="朝食食べたもの">
+                                    <el-radio-group v-model="sizeForm.breakfast" size="medium">
+                                        <el-radio border label="パン"></el-radio>
+                                        <el-radio border label="ご飯"></el-radio>
+                                        <el-radio border label="麺"></el-radio>
+                                        <el-radio border label="フルーツ"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                            </div>
+                        </transition>
+                    </el-form>
+                    <transition name="fade">
+                        <div v-if="active === 4">
+                            <form action="./public/match_pattern.php" method="post">
+                                <input type="hidden" v-model="sizeForm.happy" name="happy">
+                                <input type="hidden" v-model="sizeForm.people" name="people">
+                                <input type="submit" class="btn btn-primary" value="送信">
+                            </form>
+                        </div>
+                    </transition>
+                </div>
+            </div>
+        </transition>
+
+      <div class="link" v-if="!show">
+        <p><a href="#" @click="btnClick">はじめる</a></p>
+      </div>
+      <div id="footer"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script type="application/javascript" src="./public/js/inquiry.js"></script>
+</body>
+
+</html>

@@ -1,22 +1,27 @@
 
 new Vue({
-    el:"#inquiry",
+    el:"#wrapper",
     data:{
+        show:false,
         active: 0,
         sizeForm: {
-            name: '',
-            region: '',
-            date1: '',
-            date2: '',
             delivery: false,
-            type: [],
-            resource: '',
-            desc: ''
+            happy: '',
+            weather:'',
+            clothes:'',
+            breakfast:'',
+            people:''
         }
     },
     methods:{
         next() {
             if (this.active++ > 4) this.active = 0;
+        },
+        btnClick(){
+            this.show = !this.show;
+        },
+        submit() {
+
         }
     }
 });

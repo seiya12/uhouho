@@ -1,8 +1,34 @@
 <?php
-
+var_dump($_POST);
 /**
  * 回答結果に応じたキーワードを返す
  */
+$happy = $_POST['happy'];
+$people = $_POST['people'];
+
+switch ($happy){
+    case '楽しい':
+        $point = 0;
+        break;
+    case '悲しい':
+        $point = 1;
+        break;
+    case 'イライラ':
+        $point = 2;
+        break;
+    case '疲れた':
+        $point = 3;
+        break;
+}
+
+switch ($people){
+    case '1人':
+        $point+=1;
+        break;
+    default:
+        $point+=4;
+}
+
 $pattern = [
     ["居酒屋", "ラーメン・麺料理", "中華"],
     ["和食", "イタリアン・フレンチ", "居酒屋"],
@@ -14,6 +40,6 @@ $pattern = [
     ["中華", "居酒屋", "焼肉"]
 ];
 
-$answerNum = $_POST[''];    // TODO:: POST keyword
+$answerNum = $point;    // TODO:: POST keyword
 
-require_once dirname(__FILE__) . '/../templates/result.php';
+require_once dirname(__FILE__) . '/../templates/result.html';
