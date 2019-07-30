@@ -6,21 +6,21 @@
 
 ### 概要
 
-何が食べたいとかないときに。その時の気分、飲み物、人数、等。料理と違うアプローチ
+メニューに困ったときに。その時の気分、人数、服の色等少し変わったアプローチで料理を提案
 
 ### 技術仕様
 
 #### フロントエンド
 
-* Html
-* Css
+* HTML
+* CSS
   - Bootstrap
-* Js
-  - Vuejs
+* js
+  - Vue.js
   
 #### サーバサイド
 
-* Php
+* PHP
 
 
 ### 外部API仕様
@@ -28,9 +28,9 @@
 * https://api.gnavi.co.jp/api/
 * Google地図API（ Google　Map Javascript ）
 
-### axiosの函数化
+### axiosの関数化
 
-函数化ファイル（Get、Postのメソット）
+関数化ファイル（Get、Postのメソット）
 
 ```$xslt
 js/request/http.js
@@ -61,7 +61,7 @@ apiAddress({
     //API通信用のアプリキーを設定する
     //TODO::  これをAPI.jsと一緒にカプセル化したほうがいいですか？
     keyid:'＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊：',
-    //料理屋の名前を検索する
+    //お店の名前を検索する
     name:'ぐる'
 }).then((res)=>{
     let itemArray = res.rest;
