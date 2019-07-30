@@ -17,10 +17,11 @@
     <div id="wrapper">
       <div id="header">
         <h1>Suggesh</h1>
+        <p class="icon"><img src="../images/compass.png"></p>
         <h2>GOOD<br>EATS</h2>
-        <p>あなたの気分に合わせて料理をご提案</p>
+        <p class="text"><span>あなたの気分</span>に合わせて料理をご提案</p>
       </div>
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false" data-interval="1000">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false" data-interval="5000">
         <div class="carousel-inner carousel-inner--expend">
           <div class="carousel-item active">
             <div class="box">
