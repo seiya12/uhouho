@@ -37,9 +37,9 @@
 #header h2{
   position: absolute;
   bottom: 35%;
-  left: 40px;
+  left: 60px;
   text-align: center;
-  font-size: 4.5em;
+  font-size: 4.0em;
   line-height: 80px;
 }
 .text{
@@ -61,11 +61,11 @@ span {
 /*----- icon ------*/
 .icon {
   position: absolute;
-  bottom: 60%;
-  left: 120px;
+  bottom: 57%;
+  left: 90px;
 }
 .icon img{
-  width: 150px;
+  width: 200px;
 }
 
 /*----- box -----*/
@@ -75,7 +75,8 @@ span {
   height: 80vh;
   width: 1100px;
 /*  box-shadow: 2px 2px 6px 2px rgba(0,0,0,1);*/
-  border-radius: 50px;
+  border-radius: 40px;
+  border-bottom-left-radius: 450px;
 }
 
 .box1 {
@@ -84,7 +85,7 @@ span {
   background-size: cover;
 }
 .box2 {
-  background: linear-gradient( 160deg,rgba(0,0,0, 0),rgba(0,0,0,0)) ,url(../../images/TOP2.jpg);
+  background: linear-gradient( 160deg,rgba(0,0,0, 0),rgba(0,0,0,0)) ,url(../../images/TOP5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -97,6 +98,43 @@ span {
   background: linear-gradient( 160deg,rgba(0,0,0, 0),rgba(0,0,0,0)),url(../../images/TOP4.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/*----- link -----*/
+.link {
+  position: absolute;
+  z-index: 200;
+  top: 10vh;
+  left: 400px;
+  height: 80vh;
+  width: 1100px;
+  border-radius: 50px;
+}
+.link p{
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%,-50%);
+  margin: 0 auto;
+  width: 100px;
+}
+.link a{
+  text-align: center;
+  display: block;
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  border: solid white 1px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  background-color: rgba(0,0,0,0.4);
+/*  font-family: 'Sawarabi Gothic', sans-serif;*/
+}
+.link a:hover{
+  color: black;
+  background-color: white;
+  text-decoration: none;
 }
 
 /*===== footer =====*/
