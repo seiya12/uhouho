@@ -1,4 +1,4 @@
-import {apiAddress} from "./request/api.js";
+import {apiSearch} from "./request/api.js";
 
 
 new Vue({
@@ -7,7 +7,7 @@ new Vue({
         listData:[]
     },
     mounted(){
-        apiAddress({
+        apiSearch({
             //API通信用のアプリキーを設定する
             //TODO::  これをAPI.jsと一緒にカプセル化したほうがいいですか？
             keyid:'9b5495f984dbf1bfaca72ae3c6036536',
