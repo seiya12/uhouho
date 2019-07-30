@@ -109,6 +109,7 @@ fabric.properties
 # *.ipr
 
 .idea/
+vendor/
 # Sonarlint plugin
 .idea/sonarlint
 
