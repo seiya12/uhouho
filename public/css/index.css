@@ -7,7 +7,9 @@
   text-decoration: none;
   list-style-type: none;
 }
-
+body {
+  overflow: hidden;
+}
 /*===== wrapper =====*/
 #wrapper {
   width: 100%;
@@ -33,6 +35,7 @@
   left: 20px;
   font-size: 2.0em;
   font-weight: 100;
+  z-index: 400;
 }
 #header h2{
   position: absolute;
