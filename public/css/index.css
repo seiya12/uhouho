@@ -164,3 +164,12 @@ span {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+.img-fluid{
+  width: 3rem;
+  height: 3rem;
+}
+
+.label-class{
+  height: 4rem;
+}

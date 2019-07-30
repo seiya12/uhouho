@@ -52,8 +52,8 @@
 
         <transition name="fade">
             <div id="inquiry" v-if="show">
-                <div class="container" style="margin-left: 30rem">
-                    <el-steps :active="active" finish-status="success" style="margin: 2rem;">
+                <div class="container" style="margin-left: 40rem;width: 60%;margin-top:8rem">
+                    <el-steps :active="active" finish-status="success" style="margin: 2rem; margin-bottom: 4rem">
                         <el-step title="気分"></el-step>
                         <el-step title="天気"></el-step>
                         <el-step title="人数"></el-step>
@@ -64,64 +64,110 @@
                         <transition name="fade">
                             <div v-if="active === 0">
                                 <el-form-item label="気分">
-                                    <el-radio-group v-model="sizeForm.happy" size="medium">
-                                        <el-radio border label="楽しい"></el-radio>
-                                        <el-radio border label="悲しい"></el-radio>
-                                        <el-radio border label="イライラ"></el-radio>
-                                        <el-radio border label="疲れた"></el-radio>
+                                    <el-radio-group v-model="sizeForm.happy" size="medium" style="margin-left: 3rem">
+                                        <el-radio border label="楽しい" style="height: 4rem">
+                                            <img src="./images/happy.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="悲しい" style="height: 4rem">
+                                            <img src="./images/sad.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="イライラ" style="height: 4rem">
+                                            <img src="./images/angry.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="疲れた" style="height: 4rem">
+                                            <img src="./images/tired.png" alt="" class="img-fluid">
+                                        </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
                             </div>
                         </transition>
                         <transition name="fade">
                             <div v-if="active === 1">
                                 <el-form-item label="天気">
-                                    <el-radio-group v-model="sizeForm.weather" size="medium">
-                                        <el-radio border label="晴"></el-radio>
-                                        <el-radio border label="雲り"></el-radio>
-                                        <el-radio border label="雨"></el-radio>
+                                    <el-radio-group v-model="sizeForm.weather" size="medium" style="margin-left: 3rem">
+                                        <el-radio border label="晴" style="height: 4rem">
+                                            <img src="./images/sunny_color.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="雲り" style="height: 4rem">
+                                            <img src="./images/cloudy_color.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="雨" style="height: 4rem">
+                                            <img src="./images/rain_color.png" alt="" class="img-fluid">
+                                        </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
                             </div>
                         </transition>
                         <transition name="fade">
                             <div v-if="active === 2">
                                 <el-form-item label="人数">
-                                    <el-radio-group v-model="sizeForm.people" size="medium">
-                                        <el-radio border label="1人"></el-radio>
-                                        <el-radio border label="2人〜3人"></el-radio>
-                                        <el-radio border label="4人〜6人"></el-radio>
-                                        <el-radio border label="それ以上"></el-radio>
+                                    <el-radio-group v-model="sizeForm.people" size="medium" style="margin-left: 3rem">
+                                        <el-radio border label="1人"  style="height: 4rem">
+                                            <img src="./images/1ne.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="2人〜3人"  style="height: 4rem">
+                                            <img src="./images/2.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="4人〜6人"  style="height: 4rem">
+                                            <img src="./images/4.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="それ以上"  style="height: 4rem">
+                                            <img src="./images/7.png" alt="" class="img-fluid">
+                                        </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
                             </div>
                         </transition>
                         <transition name="fade">
                             <div v-if="active === 3">
                                 <el-form-item label="服の色">
-                                    <el-radio-group v-model="sizeForm.clothes" size="medium">
-                                        <el-radio border label="黒"></el-radio>
-                                        <el-radio border label="黄"></el-radio>
-                                        <el-radio border label="赤"></el-radio>
-                                        <el-radio border label="青"></el-radio>
-                                        <el-radio border label="白"></el-radio>
-                                        <el-radio border label="その他"></el-radio>
+                                    <el-radio-group v-model="sizeForm.clothes" size="medium" style="margin-left: 3rem">
+                                        <el-radio border label="黒" style="height: 4rem">
+                                            <img src="./images/black.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="黄" style="height: 4rem">
+                                            <img src="./images/yellow.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="赤" style="height: 4rem">
+                                            <img src="./images/red.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="青" style="height: 4rem">
+                                            <img src="./images/blue.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="白" style="height: 4rem">
+                                            <img src="./images/white.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="その他" style="height: 4rem">
+                                            <img src="./images/other.png" alt="" class="img-fluid">
+                                        </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
                             </div>
                         </transition>
                         <transition name="fade">
                             <div v-if="active === 4">
                                 <el-form-item label="朝食食べたもの">
-                                    <el-radio-group v-model="sizeForm.breakfast" size="medium">
-                                        <el-radio border label="パン"></el-radio>
-                                        <el-radio border label="ご飯"></el-radio>
-                                        <el-radio border label="麺"></el-radio>
-                                        <el-radio border label="フルーツ"></el-radio>
+                                    <el-radio-group v-model="sizeForm.breakfast" size="medium" style="margin-left: 3rem">
+                                        <el-radio border label="パン" style="height: 4rem">
+                                            <img src="./images/bread.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="ご飯" style="height: 4rem">
+                                            <img src="./images/rice.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="麺" style="height: 4rem">
+                                            <img src="./images/noodles.png" alt="" class="img-fluid">
+                                        </el-radio>
+                                        <el-radio border label="フルーツ" style="height: 4rem">
+                                            <img src="./images/fruits.png" alt="" class="img-fluid">
+                                        </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
                             </div>

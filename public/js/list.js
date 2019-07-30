@@ -93,7 +93,7 @@ new Vue({
         },
     },
     async mounted() {
-        let categoryName = '居酒屋';
+        let categoryName = document.getElementById("keyword");
         let that = this;
 
         await apiCategory({

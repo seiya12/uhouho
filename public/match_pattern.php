@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 /**
  * 回答結果に応じたキーワードを返す
  */
@@ -37,9 +36,9 @@ $pattern = [
     ["焼肉・ホルモン", "お好み焼き・粉物", "居酒屋", "鍋"],
     ["居酒屋", "ラーメン・麺料理", "すし・魚料理・シーフード"],
     ["焼き鳥・肉料理・串料理", "居酒屋", "中華"],
-    ["中華", "居酒屋", "焼肉"]
+    ["中華", "居酒屋", "焼肉・ホルモン"]
 ];
 
-$answerNum = $point;    // TODO:: POST keyword
+$answerNum = $point;
 
 require_once dirname(__FILE__) . '/../templates/result.html';

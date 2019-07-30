@@ -34,7 +34,7 @@
         <?php foreach ($pattern[$answerNum] as $val) : ?>
             <div class="row mb-5 mr-3 ml-3">
                 <div class="col mx-auto d-block img-fluid embed-responsive embed-responsive-16by9">
-                    <p><a href="http://list.html"><video class="embed-responsive-item" src="../videos/<?php echo $val; ?>.mp4" loop autoplay muted playsinline ></video></a></p>
+                    <p><a href="./showList.php?keyword=<?php echo $val; ?>"><video class="embed-responsive-item" src="../videos/<?php echo $val; ?>.mp4" loop autoplay muted playsinline ></video></a></p>
                 </div>
             </div>
         <?php endforeach; ?>
