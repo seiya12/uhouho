@@ -173,3 +173,25 @@ span {
 .label-class{
   height: 4rem;
 }
+
+.black{
+  background-color:black;
+}
+.yellow{
+  background-color:yellow;
+}
+.red{
+  background-color:red;
+}
+.blue{
+  background-color:blue;
+}
+.white{
+  background-color:white;
+}
+.pink{
+  background-color:pink;
+}
+.gray{
+  background-color:gray;
+}
