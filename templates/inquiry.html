@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>料理提案</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <link rel="stylesheet" href="./../public/css/style.css">
+</head>
+<body>
+    <div id="inquiry">
+        <div class="container">
+            <el-steps :active="active" finish-status="success" style="margin: 2rem;">
+                <el-step title="Step 1"></el-step>
+                <el-step title="Step 2"></el-step>
+                <el-step title="Step 3"></el-step>
+                <el-step title="Step 4"></el-step>
+                <el-step title="Step 5"></el-step>
+            </el-steps>
+            <el-form ref="form" :model="sizeForm" label-width="120px" size="mini">
+                <transition name="fade">
+                    <div v-if="active === 0">
+                        <el-form-item label="アンケート１">
+                            <el-radio-group v-model="sizeForm.resource" size="medium">
+                                <el-radio border label="ans1"></el-radio>
+                                <el-radio border label="ans2"></el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="active === 1">
+                        <el-form-item label="アンケート１">
+                            <el-radio-group v-model="sizeForm.resource" size="medium">
+                                <el-radio border label="ans1"></el-radio>
+                                <el-radio border label="ans2"></el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="active === 2">
+                        <el-form-item label="アンケート２">
+                            <el-radio-group v-model="sizeForm.resource" size="medium">
+                                <el-radio border label="ans1"></el-radio>
+                                <el-radio border label="ans2"></el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="active === 3">
+                        <el-form-item label="アンケート３">
+                            <el-radio-group v-model="sizeForm.resource" size="medium">
+                                <el-radio border label="ans1"></el-radio>
+                                <el-radio border label="ans2"></el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next">次へ</el-button>
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="active === 4">
+                        <el-form-item label="アンケート４">
+                            <el-radio-group v-model="sizeForm.resource" size="medium">
+                                <el-radio border label="ans1"></el-radio>
+                                <el-radio border label="ans2"></el-radio>
+                            </el-radio-group>
+                        </el-form-item>
+                        <el-button style="margin-top: 12px;" @click="next">送信</el-button>
+                    </div>
+                </transition>
+            </el-form>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="./../public/js/inquiry.js"></script>
+</body>
+</html>
