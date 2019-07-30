@@ -1,0 +1,45 @@
+.list-box{
+    margin-bottom:10px;
+}
+li{
+	list-style-type: none;
+    list-style-position: outside;
+    padding:0px;
+}
+.description{
+    padding:5px;
+    margin-top:-20px;
+}
+.time{
+    font-size:15px;
+}
+.description h1{
+    font-weight: bold;
+    font-size:20px;
+}
+tr{
+    text-align: left;
+}
+.list-group{
+    margin-top:20px;
+    min-width:560px;
+}
+th{
+    border-bottom:solid 1px #cccccc;
+}
+td{
+    margin-bottom:30px;
+    width:950px;
+    min-width:560px;
+    padding-left:10px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+#topback{
+    position:fixed;
+    bottom:0px;
+    right:5px;
+}
+html{
+	scroll-behavior: smooth;
+}

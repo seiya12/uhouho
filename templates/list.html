@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- import CSS -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../public/css/list.css">
     <!-- import JavaScript -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAamPmlTRrXG3_CDu1s0yhk3_ieccZF0Yc&callbck=initMap"></script>
@@ -25,20 +26,33 @@
         <input type="hidden" name="keyword" id="keyword" value="<?php echo $keyword ?>">
         <div id="map"></div>
         <div class="list-group">
-            <div v-for="item in restList" :key="item.id">
+            <div class="list-box" v-for="item in restList" :key="item.id">
                 <el-card :body-style="{ padding: '0px' }" >
-                    <img :src="item.image_url.shop_image1" class="image">
-                    <div style="padding: 14px;">
-                        <span>{{item.name}}</span>
+                    <img :src="item.image_url.shop_image1" class="image" style="padding: 14px;">
+                    <img :src="item.image_url.shop_image2" class="image" style="padding: 14px;">
+                    <div class="description" style="padding: 14px;">
+                        <h1>{{item.name}}</h1>       
                         <div class="bottom clearfix">
-                            <time class="time">{{ item.name_kana }}</time>
-                            <el-button type="text" class="button">{{ item.url }}</el-button>
+                        <table>
+                            <tr><th>営業時間</th></tr><p>
+                            <tr><td>{{ item.opentime }}</td></tr>
+                            <tr><th>休業日</th></tr>
+                            <tr><td>{{ item.holiday }}</td></tr>
+                            <tr><th>平均予算</th></tr>
+                            <tr><td>{{ item.budget }}円</td></tr>
+                            <tr><th>サイトURL</th></tr>
+                            <tr><td><a href="#">{{ item.url }}</a></td></tr>
+                            <tr><th>電話番号</th></tr>
+                            <tr><td>{{ item.tel }}</td></tr>
+                        </table>
                         </div>
                     </div>
                 </el-card>
             </div>
         </div>
     </div>
+    <div id="topback"><a href="#map"><img src="../images/topback.png" width="180" height="180"></a></div>
+    <!-- <el-button type="text" class="button"><div class="link">{{ item.url }}</div></el-button> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
