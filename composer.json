@@ -1,0 +1,11 @@
+{
+    "name": "daxiong/ufofo",
+    "description": "ufofo",
+    "authors": [
+        {
+            "name": "郭宇恒",
+            "email": "guoyuhengjp@gmail.com"
+        }
+    ],
+    "require": {}
+}
