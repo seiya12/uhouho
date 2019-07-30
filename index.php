@@ -1,4 +1,2 @@
 <?php
-
-
-echo "ここからアプリケーションを作りましょう";
+require_once dirname(__FILE__).'/
