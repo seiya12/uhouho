@@ -1,5 +1,5 @@
 
-import {apiCategory} from "./request/api.js";
+import {apiCategory,apiSearch} from "./request/api.js";
 
 new Vue({
     el:'#list',
@@ -13,6 +13,9 @@ new Vue({
         //マークの配列
         //毎回検索したあと、この配列をクリアする
         markers:[],
+        coordinates:[],
+        categoryCode:null,
+        restList:[]
     },
     methods:{
         /**
@@ -89,16 +92,39 @@ new Vue({
             return xmlDoc;
         },
     },
-    mounted() {
+    async mounted() {
+        let categoryName = '居酒屋';
+        let that = this;
 
-        apiCategory({
+        await apiCategory({
             //API通信用のアプリキーを設定する
             //TODO::  これをAPI.jsと一緒にカプセル化したほうがいいですか？
             keyid:'9b5495f984dbf1bfaca72ae3c6036536',
             //料理屋の名前を検索する
             lang:'ja'
         }).then((res) =>{
-            console.log(res)
-        })
+            let categoryItem = res.category_l;
+            categoryItem.map((item)=>{
+                if(item.category_l_name === categoryName){
+                    that.categoryCode = item.category_l_code;
+                }
+            })
+        });
+
+        await apiSearch({
+            keyid:'9b5495f984dbf1bfaca72ae3c6036536',
+            category_l:this.categoryCode,
+            areacode_s:'AREAS3102'
+        }).then((res)=>{
+            let restArrayData = res.rest;
+            restArrayData.map((item)=>{
+                that.restList.push(item);
+            })
+        });
+        this.initMap();
+
+        this.restList.map((item)=>{
+            this.geoAddress(this.geocoder,this.map,item.address,item.name);
+        });
     }
 });
