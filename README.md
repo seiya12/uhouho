@@ -44,7 +44,7 @@ js/request/api.js
 
 書き方について
 
-APiのURlを設定して
+APIのURlを設定して
 
 ```$xslt
 export const apiAddress = p => get('RestSearchAPI/v3/', p);
