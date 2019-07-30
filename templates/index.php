@@ -20,7 +20,7 @@
     <div id="wrapper">
       <div id="header">
         <h1>Suggesh</h1>
-        <p class="icon"><img src="../images/compass.png"></p>
+        <p class="icon"><img src="../images/icon2.jpg"></p>
         <h2>SUGGEST<br>DISH</h2>
         <p class="text"><span>あなたの気分</span>に合わせて<br>料理をご提案</p>
       </div>
@@ -43,6 +43,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="link">
+        <p><a href="inquiry.html">はじめる</a></p>
       </div>
       <div id="footer"></div>
     </div>
