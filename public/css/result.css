@@ -82,6 +82,21 @@ span {
   border-radius: 50px;
   border-bottom-left-radius: 450px;
 }
+.ship img{
+  height: 200px;
+  position: fixed;
+  z-index: 100;
+  bottom: 20px;
+  left: 30%;
+/*  right: 5%;*/
+}
+.bird img{
+  height: 100px;
+  position: fixed;
+  z-index: 100;
+  top: 5%;
+  right: 5%;
+}
 
 /*===== footer =====*/
 #footer {
