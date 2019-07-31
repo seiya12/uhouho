@@ -52,7 +52,7 @@
 
         <transition name="fade">
             <div id="inquiry" v-if="show">
-                <div class="container" style="margin-left: 40rem;width: 60%;margin-top:8rem">
+                <div class="container" style="margin-left: 30rem;width: 60%;margin-top:8rem">
                     <el-steps :active="active" finish-status="success" style="margin: 2rem; margin-bottom: 4rem">
                         <el-step title="気分"></el-step>
                         <el-step title="天気"></el-step>
@@ -79,8 +79,10 @@
                                         </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
-                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                <div class="row">
+                                    <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                    <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                </div>
                             </div>
                         </transition>
                         <transition name="fade">
@@ -98,8 +100,10 @@
                                         </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
-                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                <div class="row">
+                                    <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                    <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                </div>
                             </div>
                         </transition>
                         <transition name="fade">
@@ -120,8 +124,10 @@
                                         </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
-                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                <div class="row">
+                                    <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                    <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                </div>
                             </div>
                         </transition>
                         <transition name="fade">
@@ -148,8 +154,10 @@
                                         </el-radio>
                                     </el-radio-group>
                                 </el-form-item>
-                                <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
-                                <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                <div class="row">
+                                    <el-button style="margin-top: 12px; width:10rem" @click="back" type="danger">戻す</el-button>
+                                    <el-button style="margin-top: 12px; margin-left: 30rem ;width:10rem" @click="next" type="success">次へ</el-button>
+                                </div>
                             </div>
                         </transition>
                         <transition name="fade">

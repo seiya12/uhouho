@@ -93,7 +93,7 @@ new Vue({
         },
     },
     async mounted() {
-        let categoryName = document.getElementById("keyword");
+        let categoryName = document.getElementById("keyword").value;
         let that = this;
 
         await apiCategory({
@@ -104,8 +104,9 @@ new Vue({
             lang:'ja'
         }).then((res) =>{
             let categoryItem = res.category_l;
+            console.log(categoryName);
             categoryItem.map((item)=>{
-                if(item.category_l_name === categoryName){
+                if(item.category_l_name == categoryName){
                     that.categoryCode = item.category_l_code;
                 }
             })
