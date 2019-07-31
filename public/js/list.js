@@ -15,7 +15,8 @@ new Vue({
         markers:[],
         coordinates:[],
         categoryCode:null,
-        restList:[]
+        restList:[],
+        listScrollHeight:null
     },
     methods:{
         /**
@@ -32,8 +33,6 @@ new Vue({
                 zoom: 15,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             });
-            //現在地の取得結構安定していないので、最初の場所全部大阪駅を設定します。
-            this.geoAddress(this.geocoder,this.map,"大阪駅","大阪駅");
         },
         /**
          *Geocode函数
@@ -44,7 +43,7 @@ new Vue({
          * @param  {string}  info   ホテル名前
          * @return {Void}             Geoしたマークを地図に表示
          */
-        geoAddress:async function(geoCoder,resultsMap,address,info){
+        geoAddress:async function(geoCoder,resultsMap,address,info,id){
             //thisの変数を保存する、函数の中に、Thisが変わるから、いったんThatに保存します
             let that = this;
             //あげるアドレスにより、Geocoderして、結果を地図に保存する。
@@ -70,12 +69,18 @@ new Vue({
                         infowindow.open(map, marker);
                         that.map.setZoom(17);
                         that.map.setCenter(marker.getPosition());
+                        that.btnClick(id);
                     });
                     that.markers.push(marker);
                 }else {
                     alert(address+'Geocode was not successful for the following reason: ' + status);
                 }
             });
+        },
+        btnClick(id){
+            let scrollHeight = document.getElementById("list-box");
+            let item  = document.getElementById(id);
+            scrollHeight.scrollTo(0,item.offsetTop-300);
         },
         //XmlのStringからXmlのDOMを変更する
         getXmlDocumentByXmlString(xmlString) {
@@ -123,9 +128,9 @@ new Vue({
             })
         });
         this.initMap();
-
         this.restList.map((item)=>{
-            this.geoAddress(this.geocoder,this.map,item.address,item.name);
+            this.geoAddress(this.geocoder,this.map,item.address,item.name,item.id);
         });
+        this.listScrollHeight = document.getElementById("list").scrollHeight;
     }
 });
