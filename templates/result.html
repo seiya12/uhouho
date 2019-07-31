@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -20,25 +21,34 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row mb-1 mt-4">
-            <div class="col mx-auto d-block">
-                <h1>あなたへのおすすめ</h1>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col mx-auto d-block col-s-6">
-                <p>気になる料理をクリック！</p>
-            </div>
-        </div>
-        <?php foreach ($pattern[$answerNum] as $val) : ?>
-            <div class="row mb-5 mr-3 ml-3">
-                <div class="col mx-auto d-block img-fluid embed-responsive embed-responsive-16by9">
-                    <p><a href="./showList.php?keyword=<?php echo $val; ?>"><video class="embed-responsive-item" src="../videos/<?php echo $val; ?>.mp4" loop autoplay muted playsinline ></video></a></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+  <div id="wrapper">
+    <div id="header">
+      <h1>Suggesh</h1>
+      <p class="icon"><img src="../images/icon2.jpg"></p>
+      <h2>あなたへの<br>おすすめ</h2>
+      <p class="text">気になる料理をクリック！</p>
     </div>
+    <div id="contents">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-pause="false" data-interval="5000">
+        <div class="carousel-inner">
+<?php foreach ($pattern[$answerNum] as $key => $val) : ?>
+          <div class="carousel-item <?php if($key == 0) echo "active"; ?>">
+            <p><a href="./showList.php?keyword=<?php echo $val; ?>"><video src="../videos/<?php echo $val; ?>.mp4" loop autoplay muted playsinline ></video></a></p>
+          </div>
+<?php endforeach; ?>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
