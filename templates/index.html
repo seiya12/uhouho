@@ -58,7 +58,7 @@
                         <el-step title="天気"></el-step>
                         <el-step title="人数"></el-step>
                         <el-step title="服の色"></el-step>
-                        <el-step title="朝食食べたもの"></el-step>
+                        <el-step title="朝食べたもの"></el-step>
                     </el-steps>
                     <el-form ref="form" :model="sizeForm" label-width="120px" size="mini" action="#" method="post">
                         <transition name="fade">
@@ -162,7 +162,7 @@
                         </transition>
                         <transition name="fade">
                             <div v-if="active === 4">
-                                <el-form-item label="朝食食べたもの">
+                                <el-form-item label="朝食べたもの">
                                     <el-radio-group v-model="sizeForm.breakfast" size="medium" style="margin-left: 3rem">
                                         <el-radio border label="パン" style="height: 4rem">
                                             <img src="./images/bread.png" alt="" class="img-fluid">
