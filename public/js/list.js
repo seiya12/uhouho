@@ -80,7 +80,7 @@ new Vue({
         btnClick(id){
             let scrollHeight = document.getElementById("list-box");
             let item  = document.getElementById(id);
-            scrollHeight.scrollTo(0,item.offsetTop-300);
+            scrollHeight.scrollTo(0,item.offsetTop-400);
         },
         //XmlのStringからXmlのDOMを変更する
         getXmlDocumentByXmlString(xmlString) {
@@ -109,7 +109,6 @@ new Vue({
             lang:'ja'
         }).then((res) =>{
             let categoryItem = res.category_l;
-            console.log(categoryName);
             categoryItem.map((item)=>{
                 if(item.category_l_name == categoryName){
                     that.categoryCode = item.category_l_code;

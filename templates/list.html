@@ -38,8 +38,8 @@
             <input type="hidden" name="keyword" id="keyword" value="<?php echo $keyword ?>">
             <div class="migi">
             <div id="map"></div>
-            <div class="list-group">
-                <div class="list-box" v-for="item in restList" :key="item.id">
+            <div class="list-group" id="list-box" style="overflow-y:scroll;height: 60vh">
+                <div class="list-box" v-for="item in restList" :key="item.id" :id="item.id" style="">
                     <el-card :body-style="{ padding: '0px' }" >
                         <div class="box">
                             <img :src="item.image_url.shop_image1" class="image" style="padding: 14px;">

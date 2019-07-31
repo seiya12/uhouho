@@ -111,3 +111,7 @@ html{
   .height{
       height:50px;
   }
+
+  #list-box{
+      scroll-behavior: smooth;
+  }
