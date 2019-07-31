@@ -107,3 +107,7 @@ html{
   .icon img{
     width: 200px;
   }
+
+  #list-box{
+      scroll-behavior: smooth;
+  }
