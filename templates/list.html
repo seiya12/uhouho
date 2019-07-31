@@ -25,13 +25,13 @@
     <div id="list" class="container">
         <input type="hidden" name="keyword" id="keyword" value="<?php echo $keyword ?>">
         <div id="map"></div>
-        <div class="list-group">
-            <div class="list-box" v-for="item in restList" :key="item.id">
-                <el-card :body-style="{ padding: '0px' }" >
+        <div class="list-group" style="overflow-y:scroll;height: 60vh" id="list-box">
+            <div class="list-box" v-for="item in restList" :key="item.id" :id="item.id">
+                <el-card :body-style="{ padding: '0px' }">
                     <img :src="item.image_url.shop_image1" class="image" style="padding: 14px;">
                     <img :src="item.image_url.shop_image2" class="image" style="padding: 14px;">
                     <div class="description" style="padding: 14px;">
-                        <h1>{{item.name}}</h1>       
+                        <h1>{{item.name}}</h1>
                         <div class="bottom clearfix">
                         <table>
                             <tr><th>営業時間</th></tr><p>

@@ -43,3 +43,7 @@ td{
 html{
 	scroll-behavior: smooth;
 }
+
+#list-box{
+    scroll-behavior: smooth;
+}
