@@ -38,7 +38,7 @@
             <input type="hidden" name="keyword" id="keyword" value="<?php echo $keyword ?>">
             <div class="migi">
             <div id="map"></div>
-            <div class="list-group" id="list-box" style="overflow-y:scroll;height: 60vh">
+            <div class="list-group" id="list-box" style="overflow-y:scroll;height: 62vh">
                 <div class="list-box" v-for="item in restList" :key="item.id" :id="item.id" style="">
                     <el-card :body-style="{ padding: '0px' }" >
                         <div class="box">
@@ -67,7 +67,6 @@
             </div>
             </div>
         </div>
-        <div class=height></div>
         <div id="footer"></div>
     </div>
     <!-- <el-button type="text" class="button"><div class="link">{{ item.url }}</div></el-button> -->
