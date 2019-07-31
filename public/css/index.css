@@ -195,3 +195,12 @@ span {
 .gray{
   background-color:gray;
 }
+
+.fish img{
+  height: 100px;
+  position: fixed;
+  z-index: 1;
+  bottom: 70px;
+  right: 16%;
+/*  right: 5%;*/
+}
