@@ -80,7 +80,7 @@ new Vue({
         btnClick(id){
             let scrollHeight = document.getElementById("list-box");
             let item  = document.getElementById(id);
-            scrollHeight.scrollTo(0,item.offsetTop-400);
+            scrollHeight.scrollTo(0,item.offsetTop-250);
         },
         //XmlのStringからXmlのDOMを変更する
         getXmlDocumentByXmlString(xmlString) {
