@@ -104,7 +104,7 @@ new Vue({
         await apiCategory({
             //API通信用のアプリキーを設定する
             //TODO::  これをAPI.jsと一緒にカプセル化したほうがいいですか？
-            keyid:'9b5495f984dbf1bfaca72ae3c6036536',
+            keyid:'7f73ef1ac20dd79a719725f2ab93a1a4',
             //料理屋の名前を検索する
             lang:'ja'
         }).then((res) =>{
@@ -117,7 +117,7 @@ new Vue({
         });
 
         await apiSearch({
-            keyid:'9b5495f984dbf1bfaca72ae3c6036536',
+            keyid:'7f73ef1ac20dd79a719725f2ab93a1a4',
             category_l:this.categoryCode,
             areacode_s:'AREAS3102'
         }).then((res)=>{
