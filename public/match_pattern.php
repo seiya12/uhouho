@@ -22,7 +22,7 @@ switch ($happy){
 
 switch ($people){
     case '1人':
-        $point+=1;
+        $point+=0;
         break;
     default:
         $point+=4;
