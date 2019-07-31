@@ -33,8 +33,6 @@ new Vue({
                 zoom: 15,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             });
-            //現在地の取得結構安定していないので、最初の場所全部大阪駅を設定します。
-            this.geoAddress(this.geocoder,this.map,"大阪駅","大阪駅",'10000');
         },
         /**
          *Geocode函数
@@ -82,7 +80,7 @@ new Vue({
         btnClick(id){
             let scrollHeight = document.getElementById("list-box");
             let item  = document.getElementById(id);
-            scrollHeight.scrollTo(0,item.offsetTop);
+            scrollHeight.scrollTo(0,item.offsetTop-300);
         },
         //XmlのStringからXmlのDOMを変更する
         getXmlDocumentByXmlString(xmlString) {
