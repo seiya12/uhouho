@@ -1,3 +1,7 @@
+.migi{
+    width:60vw;
+    margin-left: 323px;
+}
 .list-box{
     margin-bottom:10px;
 }
@@ -21,7 +25,6 @@ tr{
     text-align: left;
 }
 .list-group{
-    margin-top:20px;
     min-width:560px;
 }
 th{
@@ -29,17 +32,82 @@ th{
 }
 td{
     margin-bottom:30px;
-    width:950px;
     min-width:560px;
     padding-left:10px;
     text-align: justify;
     text-justify: inter-ideograph;
 }
-#topback{
-    position:fixed;
-    bottom:0px;
-    right:5px;
-}
 html{
 	scroll-behavior: smooth;
 }
+.box{
+    padding-left:10px;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 200;
+  /*  background-color: aqua;*/
+    background-image: url(../../images/footer.png);
+    background-repeat: repeat-x;
+}
+
+  /*===== header =====*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
+    z-index: 100;
+  /*  box-shadow: 2px 2px 6px 2px rgba(0,0,0,1);*/
+  }
+  #header h1{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 2.0em;
+    font-weight: 100;
+    z-index: 400;
+  }
+  #header h2{
+    position: absolute;
+    bottom: 35%;
+    left: 60px;
+    text-align: center;
+    font-size: 4.0em;
+    line-height: 80px;
+  }
+  .text{
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 60px;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+    font-family: 'Sawarabi Gothic', sans-serif;
+  /*  font-family: 'Kosugi Maru', sans-serif;*/
+  /*  font-family: 'Noto Sans JP', sans-serif;*/
+  }
+  span {
+  /*  color: blue;*/
+  }
+  
+  /*----- icon ------*/
+  .icon {
+    position: absolute;
+    bottom: 57%;
+    left: 90px;
+  }
+  .icon img{
+    width: 200px;
+  }
+
+  .height{
+      height:50px;
+  }
